@@ -44,9 +44,10 @@ This lab provides a practical overview of building a complete data pipeline usin
 
 ## Summary
 You have completed an end-to-end data pipeline using **Cloudera on Azure**:
+1. Configure your **Kafka** topic schema.
 1. Ingested data from **ADLS** to **Kafka** using **CDF**.  
-2. Prepared an **Iceberg table** in **CDW**.  
-3. Streamed Kafka messages into **CDW** as structured Iceberg data.  
-4. Explored and analyzed the dataset in **CML**.
+1. Prepared an **Iceberg table** in **CDW**.  
+1. Streamed Kafka messages into **CDW** as structured Iceberg data.  
+1. Explored and analyzed the dataset in **CML**.
 
 This workflow demonstrates how **Cloudera Data Platform** enables a unified, cloud-native data lifecycle on **Microsoft Azure** — from ingestion to AI-driven insights.
