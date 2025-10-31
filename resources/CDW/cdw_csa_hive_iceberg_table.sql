@@ -1,5 +1,5 @@
 /* ==========================================
-+.  Author -      Fernando Cobo, Dongkai Yu
++.  Authors -      Fernando Cobo, Dongkai Yu
 +.  Roles -       Cloud Solutions Architects
 +.  Date created: 2025-10-28
 +.  SQL Scripts for CSA Hands-on Lab 2025
