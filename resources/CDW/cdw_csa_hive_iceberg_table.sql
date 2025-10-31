@@ -5,16 +5,14 @@
 +.  SQL Scripts for CSA Hands-on Lab 2025
 ========================================== */
 
--- [!] IMPORTANT: Replace {CSA_ALIAS} with your unique alias (e.g., fcobo, dyu, csanghubhatla, etc) before executing the script.
-
 -- Step 1. Drop the database before the Hands-On lab in case one with your alias already exists in the default-hive-az Virtual Warehouse.
-DROP DATABASE IF EXISTS {CSA_ALIAS};
+DROP DATABASE IF EXISTS ${CSA_ALIAS};
 
 -- Step 2. Create the database with your name as the db name in the default-hive-az Virtual Warehouse. 
-CREATE DATABASE {CSA_ALIAS};
+CREATE DATABASE ${CSA_ALIAS};
 
 -- Step 3. Create the Iceberg table in the default-hive-az Virtual Warehouse.
-CREATE EXTERNAL TABLE {CSA_ALIAS}.telco_iceberg_kafka (
+CREATE EXTERNAL TABLE ${CSA_ALIAS}.telco_iceberg_kafka (
   `multiplelines` string,
   `paperlessbilling` string,
   `gender` string,
@@ -51,7 +49,7 @@ SELECT
   COUNT(*) AS total_customers,
   SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers,
   CAST(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS churn_rate
-FROM {CSA_ALIAS}.telco_iceberg_kafka
+FROM ${CSA_ALIAS}.telco_iceberg_kafka
 GROUP BY Contract
 ORDER BY churn_rate DESC;
 
@@ -60,7 +58,7 @@ SELECT
   Churn,
   AVG(CAST(MonthlyCharges AS DOUBLE)) AS avg_monthly_charges,
   AVG(CAST(TotalCharges AS DOUBLE)) AS avg_total_charges
-FROM {CSA_ALIAS}.telco_iceberg_kafka
+FROM ${CSA_ALIAS}.telco_iceberg_kafka
 GROUP BY Churn;
 
 -- Analyze churn rate by customer tenure by grouping customers into tenure bins. This helps visualize if newer customers churn more frequently.
@@ -75,7 +73,7 @@ SELECT
   COUNT(*) AS total_customers,
   SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers,
   CAST(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS churn_rate
-FROM {CSA_ALIAS}.telco_iceberg_kafka
+FROM ${CSA_ALIAS}.telco_iceberg_kafka
 GROUP BY
   CASE
     WHEN CAST(tenure AS INT) <= 12 THEN '0-12 months'
