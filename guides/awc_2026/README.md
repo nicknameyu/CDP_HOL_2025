@@ -1,6 +1,6 @@
 **Cloudera Anywhere Cloud - CSA California 2026 Hands-On Lab**
 
-Follow these modules sequentially to provision, configure, and deploy your complete AWC environment and Cloudera AI Workbench. 
+Follow these modules sequentially to provision, configure, and deploy your complete AWC environment.
 
 * [Module 0: Lab Prerequisites and IAM Setup](./00_Lab_Prerequisites_and_IAM_Setup.md)
 * [Module 1: Configuring Cloud Credentials](./01_Configuring_Cloud_Credentials.md)
